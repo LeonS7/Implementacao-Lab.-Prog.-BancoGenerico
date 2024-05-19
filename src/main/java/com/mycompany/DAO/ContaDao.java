@@ -7,9 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  * A classe ContaDao fornece métodos para acessar e manipular dados relacionados a contas no banco de dados.
@@ -18,9 +18,11 @@ import java.util.List;
  * @author Leonardo de Souza da Luz
  */
 public class ContaDao implements daoI<Conta>{
+    // Obtém o ResourceBundle contendo as mensagens internacionalizadas
+    Internacionalizacao traducao = new Internacionalizacao();
     
     /** O objeto Banco utilizado para obter a conexão com o banco de dados. */
-    private Banco banco;
+    private final Banco banco;
 
     /**
      * Construtor padrão que inicializa o objeto Banco para estabelecer a conexão com o banco de dados.
@@ -55,7 +57,7 @@ public class ContaDao implements daoI<Conta>{
             
         } catch (SQLException ex) {
             resultado = false;
-            System.out.println("Erro ao inserir dados de Pessoa: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.inserindo_dados") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
         
         return resultado;   
@@ -87,11 +89,10 @@ public class ContaDao implements daoI<Conta>{
                 objeto = new Conta(nomeConta, cpfConta, saldoConta, numeroConta,senhaConta);
                 lista.add(objeto);
             }
-        
         } catch (SQLException ex) {
-            System.out.println("Erro na leitura de dados do BD: "+ex.getMessage());
+            //Obtem as traducoes necessarias
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.lendo_dados") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
-        
         return lista;
     }
     
@@ -126,9 +127,8 @@ public class ContaDao implements daoI<Conta>{
             }            
         
         } catch (SQLException ex) {
-            System.out.println("Erro na leitura de dados do BD: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.lendo_dados") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
-        
         return objeto;
     }
     
@@ -156,9 +156,8 @@ public class ContaDao implements daoI<Conta>{
             
         } catch (SQLException ex) {
             resultado = false;
-            System.out.println("Erro ao inserir dados de Pessoa: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.buscando_dados") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
-        
         return resultado;  
         
     }
@@ -190,7 +189,7 @@ public class ContaDao implements daoI<Conta>{
             
         } catch (SQLException ex) {
             atualizado = false;
-            System.out.println("Não é possível atualizar o registro: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.atualizando_registro") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
         
         return atualizado;
@@ -219,11 +218,9 @@ public class ContaDao implements daoI<Conta>{
             
         } catch (SQLException ex) {
             excluido = false;
-            System.out.println("Não é possível excluir o registro: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.deletando_registro") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
-        
         return excluido;        
     }
-
 }
 

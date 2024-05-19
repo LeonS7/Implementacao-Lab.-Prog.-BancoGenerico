@@ -19,12 +19,25 @@ public class Login extends javax.swing.JFrame {
     String senha;
     String confirma_senha;
     
+    // Obtém o ResourceBundle contendo as mensagens internacionalizadas
+    Internacionalizacao traducao = new Internacionalizacao();
+    
     /**
      * Construtor padrão da classe Login.
      */
     public Login() {
+        //Faz a traduçao dos componentes da interface
+        Label_titulo.setText(traducao.getTraducao("Label_titulo"));
+        Label_criar_conta.setText(traducao.getTraducao("Label_criar_conta"));
+        Label_nome.setText(traducao.getTraducao("Label_nome"));
+        Label_senha.setText(traducao.getTraducao("Label_senha"));
+        Label_senha2.setText(traducao.getTraducao("Label_senha"));
+        Label_confirma_senha.setText(traducao.getTraducao("Label_confirma_senha"));
+        bt_abrir_conta.setText(traducao.getTraducao("bt_abrir_conta"));
+        bt_Sair.setText(traducao.getTraducao("bt_Sair"));
         initComponents();
     }
+    
 
      // Código gerado pelo NetBeans para a interface gráfica foi omitido aqui
     @SuppressWarnings("unchecked")
@@ -34,24 +47,24 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         EnterCPF = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        Lebal_cpf2 = new javax.swing.JLabel();
         EnterSenha = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        entrar = new javax.swing.JButton();
-        Sair = new javax.swing.JButton();
+        Label_senha2 = new javax.swing.JLabel();
+        bt_entrar = new javax.swing.JButton();
+        bt_Sair = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        abrir_conta = new javax.swing.JButton();
+        Label_criar_conta = new javax.swing.JLabel();
+        Label_nome = new javax.swing.JLabel();
+        Label_cpf = new javax.swing.JLabel();
+        Label_senha = new javax.swing.JLabel();
+        Label_confirma_senha = new javax.swing.JLabel();
+        bt_abrir_conta = new javax.swing.JButton();
         DigitaNome = new javax.swing.JTextField();
         DigitaCPF = new javax.swing.JTextField();
         DigitaSenha = new javax.swing.JTextField();
         ConfirmaSenha = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        Label_titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BancoGenerico");
@@ -69,34 +82,34 @@ public class Login extends javax.swing.JFrame {
         EnterCPF.setBackground(new java.awt.Color(102, 102, 102));
         EnterCPF.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("CPF:");
+        Lebal_cpf2.setForeground(new java.awt.Color(255, 255, 255));
+        Lebal_cpf2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Lebal_cpf2.setText("CPF:");
 
         EnterSenha.setBackground(new java.awt.Color(102, 102, 102));
         EnterSenha.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Senha:");
+        Label_senha2.setForeground(new java.awt.Color(255, 255, 255));
+        Label_senha2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Label_senha2.setText("Senha:");
 
-        entrar.setBackground(new java.awt.Color(102, 102, 102));
-        entrar.setForeground(new java.awt.Color(255, 255, 255));
-        entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sign-in-alt.png"))); // NOI18N
-        entrar.setText("Login");
-        entrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_entrar.setBackground(new java.awt.Color(102, 102, 102));
+        bt_entrar.setForeground(new java.awt.Color(255, 255, 255));
+        bt_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sign-in-alt.png"))); // NOI18N
+        bt_entrar.setText("Login");
+        bt_entrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                entrarMouseClicked(evt);
+                bt_entrarMouseClicked(evt);
             }
         });
 
-        Sair.setBackground(new java.awt.Color(102, 102, 102));
-        Sair.setForeground(new java.awt.Color(255, 255, 255));
-        Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sign-out-alt.png"))); // NOI18N
-        Sair.setText("Sair");
-        Sair.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_Sair.setBackground(new java.awt.Color(102, 102, 102));
+        bt_Sair.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sign-out-alt.png"))); // NOI18N
+        bt_Sair.setText("Sair");
+        bt_Sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SairMouseClicked(evt);
+                bt_SairMouseClicked(evt);
             }
         });
 
@@ -107,17 +120,17 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(entrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_entrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                            .addComponent(Lebal_cpf2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Label_senha2, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EnterSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                             .addComponent(EnterCPF)))
-                    .addComponent(Sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bt_Sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,49 +141,49 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EnterCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(Lebal_cpf2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EnterSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(Label_senha2))
                 .addGap(18, 18, 18)
-                .addComponent(entrar)
+                .addComponent(bt_entrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Sair)
+                .addComponent(bt_Sair)
                 .addGap(23, 23, 23))
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Criar Conta");
+        Label_criar_conta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Label_criar_conta.setForeground(new java.awt.Color(255, 255, 255));
+        Label_criar_conta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_criar_conta.setText("Criar Conta");
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Nome:");
+        Label_nome.setForeground(new java.awt.Color(255, 255, 255));
+        Label_nome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Label_nome.setText("Nome:");
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("CPF:");
+        Label_cpf.setForeground(new java.awt.Color(255, 255, 255));
+        Label_cpf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Label_cpf.setText("CPF:");
 
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setText("Senha:");
+        Label_senha.setForeground(new java.awt.Color(255, 255, 255));
+        Label_senha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Label_senha.setText("Senha:");
 
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Confirmar Senha:");
+        Label_confirma_senha.setForeground(new java.awt.Color(255, 255, 255));
+        Label_confirma_senha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Label_confirma_senha.setText("Confirmar Senha:");
 
-        abrir_conta.setBackground(new java.awt.Color(102, 102, 102));
-        abrir_conta.setForeground(new java.awt.Color(255, 255, 255));
-        abrir_conta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/edit (1).png"))); // NOI18N
-        abrir_conta.setText("Abir Conta");
-        abrir_conta.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_abrir_conta.setBackground(new java.awt.Color(102, 102, 102));
+        bt_abrir_conta.setForeground(new java.awt.Color(255, 255, 255));
+        bt_abrir_conta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/edit (1).png"))); // NOI18N
+        bt_abrir_conta.setText("Abir Conta");
+        bt_abrir_conta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                abrir_contaMouseClicked(evt);
+                bt_abrir_contaMouseClicked(evt);
             }
         });
 
@@ -193,63 +206,60 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ConfirmaSenha))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(DigitaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                                    .addComponent(DigitaNome)
-                                    .addComponent(DigitaCPF)))))
+                        .addComponent(Label_confirma_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ConfirmaSenha))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(abrir_conta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))))
+                            .addComponent(bt_abrir_conta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Label_criar_conta, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Label_senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Label_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Label_nome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(DigitaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                            .addComponent(DigitaNome)
+                            .addComponent(DigitaCPF))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Label_criar_conta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(Label_nome)
                     .addComponent(DigitaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(Label_cpf)
                     .addComponent(DigitaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
+                    .addComponent(Label_senha)
                     .addComponent(DigitaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                    .addComponent(Label_confirma_senha)
                     .addComponent(ConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(abrir_conta)
+                .addComponent(bt_abrir_conta)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bank (1).png"))); // NOI18N
-        jLabel1.setText("Banco Generico");
+        Label_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Label_titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bank (1).png"))); // NOI18N
+        Label_titulo.setText("Banco Generico");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -257,14 +267,14 @@ public class Login extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -301,7 +311,7 @@ public class Login extends javax.swing.JFrame {
      * Realiza a autenticação do usuário e exibe a tela do sistema bancário.
      * @param evt O evento de clique do mouse
      */
-    private void entrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarMouseClicked
+    private void bt_entrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_entrarMouseClicked
         //Pega os dados digitados na interface grafica
         cpf = DigitaCPF.getText();
         senha = DigitaSenha.getText();
@@ -314,24 +324,24 @@ public class Login extends javax.swing.JFrame {
             banco.setLocationRelativeTo(null);
             banco.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null, "Esta conta nao existe, verifique o CPF e Senha ou crie uma conta.", "Erro!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.conta_nao_encontrada"), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
         
-    }//GEN-LAST:event_entrarMouseClicked
+    }//GEN-LAST:event_bt_entrarMouseClicked
     /**
      * Evento acionado ao clicar no botão "Sair".
      * Fecha a janela de login.
      * @param evt O evento de clique do mouse
      */
-    private void SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseClicked
+    private void bt_SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_SairMouseClicked
         this.dispose();
-    }//GEN-LAST:event_SairMouseClicked
+    }//GEN-LAST:event_bt_SairMouseClicked
     /**
      * Evento acionado ao clicar no botão "Abrir Conta".
      * Realiza o processo de abertura de uma nova conta bancária.
      * @param evt O evento de clique do mouse
      */
-    private void abrir_contaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abrir_contaMouseClicked
+    private void bt_abrir_contaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_abrir_contaMouseClicked
         //Pega os dados digitados na interface grafica
         nome = DigitaNome.getText();
         cpf = DigitaCPF.getText();
@@ -359,12 +369,12 @@ public class Login extends javax.swing.JFrame {
                 banco.setVisible(true);
             }
             //Excecoes caso nao passe na verificacao
-            JOptionPane.showMessageDialog(null, "Ja existe uma conta com essas informacoes, por favor faça login.", "Erro!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.conta_ja_existe"), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "As senhas nao correspondem, digite novamente.", "Erro!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.senha_nao_corresponde"), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_abrir_contaMouseClicked
+    }//GEN-LAST:event_bt_abrir_contaMouseClicked
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ConfirmaSenha;
@@ -373,18 +383,18 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField DigitaSenha;
     private javax.swing.JTextField EnterCPF;
     private javax.swing.JTextField EnterSenha;
-    private javax.swing.JButton Sair;
-    private javax.swing.JButton abrir_conta;
-    private javax.swing.JButton entrar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel Label_confirma_senha;
+    private javax.swing.JLabel Label_cpf;
+    private javax.swing.JLabel Label_criar_conta;
+    private javax.swing.JLabel Label_nome;
+    private javax.swing.JLabel Label_senha;
+    private javax.swing.JLabel Label_senha2;
+    private javax.swing.JLabel Label_titulo;
+    private javax.swing.JLabel Lebal_cpf2;
+    private javax.swing.JButton bt_Sair;
+    private javax.swing.JButton bt_abrir_conta;
+    private javax.swing.JButton bt_entrar;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

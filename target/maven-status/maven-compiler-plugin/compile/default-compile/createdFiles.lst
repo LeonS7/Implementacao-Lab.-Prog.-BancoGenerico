@@ -4,6 +4,7 @@ com\mycompany\entidades\Extrato.class
 com\mycompany\DAO\daoI.class
 com\mycompany\entidades\Executa.class
 com\mycompany\telas\Login$3.class
+com\mycompany\entidades\Internacionalizacao.class
 com\mycompany\telas\Sistema$3.class
 com\mycompany\DAO\ContaDao.class
 com\mycompany\telas\Sistema.class

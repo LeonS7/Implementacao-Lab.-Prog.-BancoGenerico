@@ -8,6 +8,9 @@ package com.mycompany.entidades;
  */
 public class Conta {
     
+    // Obtém o ResourceBundle contendo as mensagens internacionalizadas
+    Internacionalizacao traducao = new Internacionalizacao();
+    
     /** O identificador único da conta. */
     protected int id;
     /** O nome do titular da conta. */
@@ -139,10 +142,9 @@ public class Conta {
      */
     @Override
     public String toString() {
-        return "Conta {" + "id = " + id + "\n" +
-               "Nome = " + nome + "\n" +
-               "CPF = " + cpf + "\n" +
-               "Numero da Conta = " + numeroConta + '}';
+    return traducao.getTraducao("conta") + " id = " + id + "\n" +
+           traducao.getTraducao("nome") + " = " + nome + "\n" +
+           traducao.getTraducao("cpf") + " = " + cpf + "\n" +
+           traducao.getTraducao("numero_conta") + " = " + numeroConta + "\n";
     } 
-
 }

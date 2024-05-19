@@ -1,9 +1,11 @@
 
 package com.mycompany.BD;
 
+import com.mycompany.entidades.Internacionalizacao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  * A classe bancoDados representa a configuração e operações de conexão com um banco de dados.
@@ -12,6 +14,8 @@ import java.sql.SQLException;
  * @author Leonardo de Souza da Luz
  */
 public class bancoDados {
+    // Obtém o ResourceBundle contendo as mensagens internacionalizadas
+    Internacionalizacao traducao = new Internacionalizacao();
     
     /** A URL de conexão com o banco de dados. */
     private String url;
@@ -106,15 +110,15 @@ public class bancoDados {
      * @return Uma conexão JDBC ativa ou null em caso de falha na conexão.
      */
     public Connection getConexao(){
+
         Connection conexao = null;        
         
         try {
             this.url = "jdbc:"+this.banco+"://localhost:"+this.porta+"/"+this.nomeBanco;
             conexao = DriverManager.getConnection(this.url, this.usuario, this.senha);
         } catch (SQLException ex) {
-            System.out.println("Problemas na conexão: "+ex.getMessage());            
+            JOptionPane.showMessageDialog(null, traducao.getTraducao("error.conexao") + ex.getMessage(), traducao.getTraducao("title.ERROR_MESSAGE"), JOptionPane.ERROR_MESSAGE);
         }
-        
         return conexao;
     }
     
