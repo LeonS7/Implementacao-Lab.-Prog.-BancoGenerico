@@ -6,7 +6,7 @@ package com.mycompany.DAO;
  * https://github.com/LeonS7
  */
 import com.mycompany.entidades.*;
-import br.com.company.db.Banco;
+import com.mycompany.BD.bancoDados;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,13 +25,13 @@ public class ContaDao implements daoI<Conta>{
     Internacionalizacao traducao = new Internacionalizacao();
     
     /** O objeto Banco utilizado para obter a conexão com o banco de dados. */
-    private final Banco banco;
+    private final bancoDados banco;
 
     /**
      * Construtor padrão que inicializa o objeto Banco para estabelecer a conexão com o banco de dados.
      */
     public ContaDao() {
-        this.banco = new Banco();
+        this.banco = new bancoDados();
     }
     
     /**
