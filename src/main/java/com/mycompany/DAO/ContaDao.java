@@ -1,6 +1,10 @@
 
 package com.mycompany.DAO;
-
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */
 import com.mycompany.entidades.*;
 import br.com.company.db.Banco;
 import java.sql.Connection;
@@ -15,7 +19,6 @@ import javax.swing.JOptionPane;
  * A classe ContaDao fornece métodos para acessar e manipular dados relacionados a contas no banco de dados.
  * Ela implementa a interface daoI(conta) para operações básicas de CRUD (Create, Read, Update, Delete).
  * 
- * @author Leonardo de Souza da Luz
  */
 public class ContaDao implements daoI<Conta>{
     // Obtém o ResourceBundle contendo as mensagens internacionalizadas

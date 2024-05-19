@@ -1,5 +1,9 @@
 package com.mycompany.telas;
-
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */
 import com.mycompany.entidades.*;
 import com.mycompany.DAO.*;
 import java.util.Random;
@@ -8,7 +12,6 @@ import javax.swing.JOptionPane;
 /**
  * Classe que representa a tela de login do sistema bancário.
  * 
- * @author Leonardo de Souza da Luz
  */
 public class Login extends javax.swing.JFrame {
 

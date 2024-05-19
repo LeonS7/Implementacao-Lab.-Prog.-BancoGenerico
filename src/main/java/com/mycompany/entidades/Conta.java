@@ -1,10 +1,14 @@
 package com.mycompany.entidades;
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */ 
 
 /**
  * A classe Conta representa uma entidade que armazena informações sobre uma conta bancária.
  * Ela inclui atributos como nome, CPF, saldo, número da conta e senha.
  * 
- * @author Leonardo de Souza da Luz
  */
 public class Conta {
     

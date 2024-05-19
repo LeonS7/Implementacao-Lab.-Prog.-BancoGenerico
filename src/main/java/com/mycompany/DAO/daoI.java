@@ -1,5 +1,9 @@
 package com.mycompany.DAO;
-
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */
 import java.util.List;
 
 /**
@@ -7,7 +11,6 @@ import java.util.List;
  * em classes de acesso a dados (DAO - Data Access Object).
  * @param <T> O tipo genérico que representa a entidade associada ao DAO.
  * 
- * @author Leonardo de Souza da Luz
  */
 public interface daoI<T> {
 

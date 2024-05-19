@@ -1,12 +1,15 @@
 package com.mycompany.entidades;
-
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */
 import com.mycompany.telas.Login;
 
 /**
  * A classe Executa contém o método principal (main) que inicia a execução da aplicação.
  * Ela cria uma instância da tela de login (Login) e a torna visível para o usuário.
  * 
- * @author Leonardo de Souza da Luz
  */
 public class Executa {
     

@@ -1,6 +1,10 @@
 
 package com.mycompany.BD;
-
+/**
+ *
+ * @author Leonardo de Souza da Luz
+ * https://github.com/LeonS7
+ */
 import com.mycompany.entidades.Internacionalizacao;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +15,6 @@ import javax.swing.JOptionPane;
  * A classe bancoDados representa a configuração e operações de conexão com um banco de dados.
  * Ela fornece métodos para configurar os parâmetros de conexão e obter uma conexão ativa com o banco de dados.
  * 
- * @author Leonardo de Souza da Luz
  */
 public class bancoDados {
     // Obtém o ResourceBundle contendo as mensagens internacionalizadas
