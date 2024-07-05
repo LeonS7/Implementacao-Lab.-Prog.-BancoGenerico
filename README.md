@@ -11,7 +11,7 @@ Este é um projeto de software para simulação de um sistema bancário genéric
 
 ## Funcionalidades desejadas e que não foram implementadas (ToDo)
 
-- Subclasses da clase conta (conta_corrente, conta_poupanca).
+- Subclasses da classe conta (conta_corrente, conta_poupanca).
 - Interface de administrador que ira manipular todos os dados do sistema.
 
 ## Requisitos do Sistema
